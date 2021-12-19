@@ -1,4 +1,4 @@
-d; This is a CTP file
+; This is a CTP file
  
 begin parm experiment
   ngen = 200000			;  POS: # of successes; NEG: # of tries
