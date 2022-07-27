@@ -6,20 +6,20 @@ begin parm experiment
 end parm experiment
 
 begin parm kinematics_main
-  Ebeam = 4559.0 		;  (MeV)
+  Ebeam = 4559.00 		;  (MeV)
   dEbeam = 0.05			;  beam energy variation (%)
   electron_arm = 1              ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
   hadron_arm = 5                ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
   spec%e%P = 2553.0		;  e arm central momentum (MeV/c)
-  spec%e%theta = 33.05  	;  e arm angle setting (degrees)
+  spec%e%theta = -33.05  	;  e arm angle setting (degrees)
   spec%p%P = 2792.0		;  p arm central momentum (MeV/c)
-  spec%p%theta = 29.900 	;  p arm angle setting (degrees)
+  spec%p%theta = 29.90  	;  p arm angle setting (degrees)
 end parm kinematics_main
 
 begin parm target
   targ%A = 1.			;  target A
   targ%Z = 1.			;  target Z
-  targ%mass_amu = 1.007276	;  target mass in amu
+  targ%mass_amu = 1.00794	;  target mass in amu
   targ%mrec_amu = 0.		;  recoil mass in amu (eep=A-1 system,pion=A-2)
   targ%rho = 0.0723		;  target density (g/cm^3)
   targ%thick = 723.00		;  target thick (mg/cm^2) 10.0cm long
@@ -57,12 +57,12 @@ end parm p_arm_accept
 begin parm beamandtargetinfo
   gen%xwid = 0.008868           ;  beam width - one sigma (cm)  (89microns)
   gen%ywid = 0.004235           ;  beam width - one sigma (cm)  (42microns)
-  targ%fr_pattern = 3.          ;  raster pattern: 1=square, 2=circular
-  targ%fr1 = 0.1                ;  horizontal size OR inner radius(2)
-  targ%fr2 = 0.1                ;  vertical size OR outer radius(2)
-  targ%xoffset = 0.025          ;  target x-offset (cm): +x = beam right
-  targ%yoffset = 0.0            ;  target y-offset (cm): +y = up
-  targ%zoffset = 0.221          ;  target z-offset (cm): +z = downstream
+  targ%fr_pattern = 3.          ;  raster pattern: 1=square, 2=circular, 3=square new one
+  targ%fr1 = 0.2                ;  horizontal size OR inner radius(2)
+  targ%fr2 = 0.2                ;  vertical size OR outer radius(2)
+  targ%xoffset = 0.0            ;  target x-offset (cm): +x = beam right   old value was set 0.025
+  targ%yoffset = 0.0            ;  target y-offset (cm): +y = up           
+  targ%zoffset = 0.0            ;  target z-offset (cm): +z = downstream   old value was set 0.221 
                                 ;   zreal = znominal + zoffset
 end parm beamandtargetinfo
 
@@ -72,15 +72,15 @@ end parm beamandtargetinfo
 ; thus pointing above target and giving a negative shift to particle's xptar)
 begin parm spect_offset
   spec%e%offset%x = 0.0         ;  x offset (cm)
-  spec%e%offset%y = 0.014       ;  y offset (cm)
-  spec%e%offset%z = 0.          ;  z offset (cm)
-  spec%e%offset%xptar = 1.10    ;  xptar offset (mr)    !x(y)ptar is slope, so
-  spec%e%offset%yptar = 0.      ;  yptar offset (mr)    !it's really unitless.
+  spec%e%offset%y = 0.0         ;  y offset (cm)  old value was set 0.014
+  spec%e%offset%z = 0.0          ;  z offset (cm)
+  spec%e%offset%xptar = 0.0    ;  xptar offset (mr)    !x(y)ptar is slope, so   old value was set 1.10
+  spec%e%offset%yptar = 0.0     ;  yptar offset (mr)    !it's really unitless.
   spec%p%offset%x = 0.0         ;  x offset (cm)
   spec%p%offset%y = 0.0         ;  y offset (cm)
-  spec%p%offset%z = 0.          ;  z offset (cm)
-  spec%p%offset%xptar = 0.      ;  xptar offset (mr)
-  spec%p%offset%yptar = 0.      ;  yptar offset (mr)
+  spec%p%offset%z = 0.0         ;  z offset (cm)
+  spec%p%offset%xptar = 0.0     ;  xptar offset (mr)
+  spec%p%offset%yptar = 0.0     ;  yptar offset (mr)
 end parm spect_offset
 
 begin parm simulate

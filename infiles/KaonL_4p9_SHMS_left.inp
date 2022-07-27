@@ -14,14 +14,14 @@ begin parm experiment
 end parm experiment
 
 begin parm kinematics_main
-  Ebeam = 3835.0             ;  (MeV)
+  Ebeam = 4933.0             ;  (MeV)
   dEbeam = 0.05              ;  beam energy variation (%)
   electron_arm = 1           ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
   hadron_arm = 5             ;  1=hms,2=sos,3=hrsr,4=hrsl,5=shms
-  spec%e%P = 968.00          ;  e arm central momentum (MeV/c)
-  spec%e%theta = -21.14      ;  e arm angle setting (degrees)
+  spec%e%P = 2066.0          ;  e arm central momentum (MeV/c)
+  spec%e%theta = -12.71      ;  e arm angle setting (degrees)
   spec%p%P = 2583.0          ;  p arm central momentum (MeV/c)
-  spec%p%theta = 9.790       ;  p arm angle setting (degrees)
+  spec%p%theta = 11.86       ;  p arm angle setting (degrees)
 end parm kinematics_main
 
 begin parm target
@@ -66,11 +66,11 @@ begin parm beamandtargetinfo
   gen%xwid = 0.008868           ;  beam width - one sigma (cm)  (89microns)
   gen%ywid = 0.004235           ;  beam width - one sigma (cm)  (42microns)
   targ%fr_pattern = 1.          ;  raster pattern: 1=square, 2=circular
-  targ%fr1 = 0.2                ;  horizontal size OR inner radius(2)
-  targ%fr2 = 0.2                ;  vertical size OR outer radius(2)
-  targ%xoffset = 0.025          ;  target x-offset (cm): +x = beam right
+  targ%fr1 = 0.225              ;  horizontal size OR inner radius(2)
+  targ%fr2 = 0.225              ;  vertical size OR outer radius(2)
+  targ%xoffset = 0.025          ;  target x-offset (cm): +x = beam right, old value 0.025  
   targ%yoffset = 0.0            ;  target y-offset (cm): +y = up
-  targ%zoffset = 0.221          ;  target z-offset (cm): +z = downstream
+  targ%zoffset = 0.221          ;  target z-offset (cm): +z = downstream, old value 0.221  
                                 ;   zreal = znominal + zoffset
 end parm beamandtergetinfo
 
@@ -80,9 +80,9 @@ end parm beamandtergetinfo
 ; thus pointing above target and giving a negative shift to particle's xptar)
 begin parm spect_offset
   spec%e%offset%x = 0.0         ;  x offset (cm)
-  spec%e%offset%y = 0.014       ;  y offset (cm)
+  spec%e%offset%y = 0.0         ;  y offset (cm), old value 0.014
   spec%e%offset%z = 0.          ;  z offset (cm)
-  spec%e%offset%xptar = 1.10    ;  xptar offset (mr)    !x(y)ptar is slope, so
+  spec%e%offset%xptar = 1.10    ;  xptar offset (mr)    !x(y)ptar is slope, so, old value 1.10
   spec%e%offset%yptar = 0.      ;  yptar offset (mr)    !it's really unitless.
   spec%p%offset%x = 0.0         ;  x offset (cm)
   spec%p%offset%y = 0.0         ;  y offset (cm)
