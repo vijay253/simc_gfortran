@@ -151,6 +151,11 @@ C Structure for variables that we want to available to the ntuple.
 		real*8 radphot, radarm
 		real*8 resfac
 		real*8 sigcm
+		real*8 w_fer
+		real*8 t_old
+		real*8 thetacm_fer
+		real*8 phicm_fer
+		real*8 dsigdt
 		real*8 krel,mm,mmA,t,dilu
 		real*8 sigcm1, sigcm2, sigcm3, sigcm4
 		real*8 xfermi, yfermi
