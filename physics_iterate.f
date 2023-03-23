@@ -361,25 +361,28 @@ c	write(6,*)' phicm ',phicm*180./3.14159,phicm_fer*180./3.14159,phipq*180./3.141
 ***
 * Parameterization revised for IT26, 12.11.09
 c	   q2_set=2.45
-	   q2_set=0.38
+	   q2_set=0.375
 	   tav=(0.0735+0.028*log(q2_set))*q2_set
 	   ftav=(abs(t_gev)-tav)/tav
 	   ft=t_gev/(abs(t_gev)+0.139570**2)**2
 
 	   sigl=(fitpar(1)+fitpar(2)*log(Q2_g))
      1           *exp((fitpar(3)+fitpar(4)*log(Q2_g))*(abs(t_gev)-0.2))
+c	   print*,"sigl", sigl
 	   sigt=fitpar(5)+fitpar(6)*log(Q2_g)
      1           +(fitpar(7)+fitpar(8)*log(Q2_g))*ftav
-
-	   siglt=(fitpar(9)*exp(fitpar(10)*abs(t_gev))
-     1           +fitpar(11)/abs(t_gev))*sin(thetacm)
-	   sigtt=(fitpar(12)*Q2_g*exp(-Q2_g))*ft*sin(thetacm)**2
-
+c	   print*,"sigt", sigt
+	   siglt=((fitpar(9)*exp(fitpar(10)*abs(t_gev))
+     1           +fitpar(11)/abs(t_gev))*sin(thetacm))
+c	   print*,"siglt", siglt
+	   sigtt=-((fitpar(12)/Q2_g*exp(-Q2_g))*ft*sin(thetacm)**2)
+c	   print*,"sigtt", sigtt
 	   tav=(-0.178+0.315*log(Q2_g))*Q2_g
 	   
 	   sig219=(sigt+main%epsilon*sigl+main%epsilon*cos(2.*phicm)*sigtt
      >		+sqrt(2.0*main%epsilon*(1.+main%epsilon))*cos(phicm)*siglt)/1.d0
 	  
+c	   print*,"sig", sig219
 
 c now convert to different W
 c W dependence given by 1/(W^2-M^2)^2
