@@ -95,12 +95,12 @@
 * fit (default model - can always be evaluated).  sigcm2 is multipole,
 * IF low_w_flag is set.
 * NOTE: s, t, mtar, and Q2 must be converted to GeV first.
-
-	ntup%sigcm1 = sig_blok(thetacm,phicm,main%t/1.d6,vertex%q2/1.d6,s/1.d6,main%epsilon,
-     >		targ%Mtar_struck/1000.,which_pion)
-	sigma_eepi = ntup%sigcm1
-
-	ntup%sigcm = sigma_eepi		!sig_cm
+c
+c	ntup%sigcm1 = sig_blok(thetacm,phicm,main%t/1.d6,vertex%q2/1.d6,s/1.d6,main%epsilon,
+c     >		targ%Mtar_struck/1000.,which_pion)
+c	sigma_eepi = ntup%sigcm1
+c
+c	ntup%sigcm = sigma_eepi		!sig_cm
 
 
 *******************************************************************************
