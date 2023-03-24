@@ -31,7 +31,7 @@ begin parm target
   targ%thick = 723.0         ;  target thick (mg/cm^2) 10cm thick
   targ%angle = 0.            ;  target angle (for solid target) (degrees)
   targ%abundancy = 100.      ;  target purity (%)
-  targ%can = 2               ;  1=beer can (fpi), 2=pudding can (nucpi)
+  targ%can = 3               ;  1=beer can (fpi), 2=pudding can (nucpi)
 end parm target
 
 begin parm debug             ;  (ONES give helpful debug info)
