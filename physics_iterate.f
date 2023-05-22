@@ -321,7 +321,7 @@ c NEW VERSION WHERE TARGET NUCLEON IS AT REST (AS IN EXPERIMENTAL REPLAY)
 	if(phicm.lt.0.) phicm = 2.*3.141592654+phicm
 
 	main%thetacm = thetacm
-	main%phicm = phicm
+	main%phicm = phi
 
 c	write(6,*)'  '
 c 	write(6,*)' pfer ',pfer
@@ -375,7 +375,7 @@ c	   print*,"sigt", sigt
 	   siglt=((fitpar(9)*exp(fitpar(10)*abs(t_gev))
      1           +fitpar(11)/abs(t_gev))*sin(thetacm))
 c	   print*,"siglt", siglt
-	   sigtt=-((fitpar(12)/Q2_g*exp(-Q2_g))*ft*sin(thetacm)**2)
+	   sigtt=((fitpar(12)/Q2_g*exp(-Q2_g))*ft*sin(thetacm)**2)
 c	   print*,"sigtt", sigtt
 	   tav=(-0.178+0.315*log(Q2_g))*Q2_g
 	   
